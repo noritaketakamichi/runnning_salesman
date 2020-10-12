@@ -3,32 +3,26 @@
 //一番距離が短いやつは必ず残す
 //残りの3つから1つをルーレット選択
 const selection = (arr) => {
-    console.log("arr:" + arr);
 
     //距離の配列
     const distArr = [arr[0][1], arr[1][1], arr[2][1], arr[3][1]];
 
     //4つの中からエリート選択
     const firstChoiceNum = pickOneOfFour(distArr);
-    console.log("firstchoice:", +firstChoiceNum);
-
     const firstChoice = arr[firstChoiceNum];
 
     //選択された要素を削除
     arr.splice(firstChoiceNum, 1);
-    console.log("after:" + arr);
 
     //距離の配列（要素は3つ）
     const distArr2 = [arr[0][1], arr[1][1], arr[2][1]];
 
     //確率の配列
     const probArr2 = getProbFromDist(distArr2);
-
     const rand2 = Math.random();
 
     //3つの中からルーレット選択
     const secondChoiceNum = pickOneOfThree(probArr2, rand2);
-
     const secondChoice = arr[secondChoiceNum];
 
     return [firstChoice, secondChoice]

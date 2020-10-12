@@ -10,7 +10,7 @@ const generateRandomArr = () => {
         return Math.random() - 0.5;
     });
 
-    console.log("numArr:"+numArr);
+    // console.log("numArr:"+numArr);
     return numArr;
 };
 
