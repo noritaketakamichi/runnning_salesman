@@ -1,16 +1,17 @@
 const location = require("./data/location");
 const tokyo = [0, 'tokyo', 35.68944, 139.69167]
+const numArr=[0,1,2,3,4,5,6,7,8,9,10,11]
 
-const generateArr = () => {
+//numArrを並び替える
+const generateRandomArr = () => {
 
     //ランダムに並び換え
-    location.sort(function () {
+    numArr.sort(function () {
         return Math.random() - 0.5;
-
     });
 
-    // console.log(location);
-    return location;
+    console.log("numArr:"+numArr);
+    return numArr;
 };
 
 const addStartEnd=(arr)=>{
@@ -20,5 +21,5 @@ const addStartEnd=(arr)=>{
 
 }
 
-module.exports = { generateArr,addStartEnd };
+module.exports = { generateRandomArr,addStartEnd };
 
