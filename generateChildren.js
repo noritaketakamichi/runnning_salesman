@@ -30,24 +30,24 @@ const partialCrossing=(father,mother,rand)=>{
 
 //入れ替え
 const exchange=(arr,pos,yourNum)=>{
-    console.log("pos:"+pos);
-    console.log("yourNum:"+yourNum);
+    // console.log("pos:"+pos);
+    // console.log("yourNum:"+yourNum);
 
-    console.log("arr:"+arr);
+    // console.log("arr:"+arr);
     //選択位置の数字
     const myNum=arr[pos];
 
     //相手の数字の位置
     const yourNumPos = arr.indexOf(yourNum);
 
-    console.log("yourNumPos:"+yourNumPos);
+    // console.log("yourNumPos:"+yourNumPos);
 
     //数字の入れ替え(posとyourNumPos)
 
     arr[pos]=yourNum;
     arr[yourNumPos]=myNum;
 
-    console.log("arr:"+arr);
+    // console.log("arr:"+arr);
 
     return arr;
 
