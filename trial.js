@@ -20,15 +20,15 @@ let distanceArr = [[locArr[0], calcTotalDist(locArr[0])], [locArr[1], calcTotalD
 console.log("distanceArr:"+JSON.stringify(distanceArr));
 
 //世代数
-const generationNum = 10;
+const generationNum = 10000;
 
 for (let i = 0; i < generationNum; i++) {
     console.log("distanceArr:"+JSON.stringify(distanceArr));
     
     //2つのルートをルーレット選択で選択
-    const SelectedRoutes = selection(distanceArr);
-    const Parents=JSON.parse(JSON.stringify([SelectedRoutes[0][0],SelectedRoutes[1][0]]));
-    // console.log("Parents:"+JSON.stringify(Parents));
+    const SelectedRoutes = JSON.parse(JSON.stringify(selection(distanceArr)));
+    const parents=JSON.parse(JSON.stringify([SelectedRoutes[0][0],SelectedRoutes[1][0]]));
+    console.log("Parents:",JSON.stringify(parents));
 
     //一点交叉（切り離してくっつける）
     //2つの子供が生成される
@@ -36,9 +36,12 @@ for (let i = 0; i < generationNum; i++) {
     // console.log("Parents:"+JSON.stringify(Parents));
     // console.log("children:"+JSON.stringify(children));
 
+    //突然変異
+    //0.05の確率で入れ替え
+
     //次世代の4ルート
-    const nextGen= [SelectedRoutes[0][0],SelectedRoutes[1][0],children[0],children[1]];
-    // console.log("nextGen:"+JSON.stringify(nextGen));
+    const nextGen= [...parents,...children];
+    console.log("nextGen:",JSON.stringify(nextGen));
 
     distanceArr = [[nextGen[0], calcTotalDist(nextGen[0])], [nextGen[1], calcTotalDist(nextGen[1])], [nextGen[2], calcTotalDist(nextGen[2])], [nextGen[3], calcTotalDist(nextGen[3])]]
     
