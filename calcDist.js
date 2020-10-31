@@ -3,9 +3,6 @@ const start = [0, 'tokyo', 35.68944, 139.69167]
 
 //トータル距離を求める関数
 const calcTotalDist = (locArr) => {
-    //locArr=Array(12)
-    // console.log("location:"+location[10]);
-    // console.log("locArr:"+locArr);
     let distance = 0;
     distance+=calcDistfromStart(locArr[0])
     for (let i = 1; i < locArr.length - 2; i++) {
