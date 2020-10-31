@@ -1,7 +1,7 @@
 //0.5%の確率で突然変異
 //引数は4つのルート
 const mutation = (arr) => {
-    const probability = 3;
+    const probability = 10;
     const percentTmp = Math.random() * 100;
 
     if (percentTmp <= probability) {

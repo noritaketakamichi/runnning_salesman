@@ -36,16 +36,16 @@ for (let i = 0; i < generationNum; i++) {
     // console.log("children:",children);
 
     //突然変異
-    //0.05の確率で入れ替え
-    // console.log("-------------",children[1]);
+    //一定の確率で入れ替え
     children[1]=mutation(children[1]);
-    // console.log("^^^^^^^^^^^^^^",children[1]);
 
     //次世代の4ルート
     const nextGen= [...parents,...children];
-    // console.log("nextGen:",JSON.stringify(nextGen));
 
     distanceArr = [[nextGen[0], calcTotalDist(nextGen[0])], [nextGen[1], calcTotalDist(nextGen[1])], [nextGen[2], calcTotalDist(nextGen[2])], [nextGen[3], calcTotalDist(nextGen[3])]]
+    if((i+1)%1000===0){
+        console.log("arr:",distanceArr)
+    }
     console.log("dist:",distanceArr[0][1]);
     
 }
