@@ -10,7 +10,7 @@ const calcTotalDist = (locArr) => {
         distance += calcTwoPoint(locArr[i],locArr[i+1])
     }
     distance+=calcDistfromStart(locArr[locArr.length-1])
-    return distance
+    return distance;
 }
 
 //2点間距離の導出

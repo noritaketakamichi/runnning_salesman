@@ -17,7 +17,7 @@ const generateRandomArr = () => {
 const addStartEnd=(arr)=>{
     arr.unshift(tokyo);
     arr.push(tokyo);
-    console.log(arr);
+    // console.log(arr);
 
 }
 

@@ -9,14 +9,14 @@ const selection = (arr) => {
     //距離の配列
     const distArr = [arr[0][1], arr[1][1], arr[2][1], arr[3][1]];
 
-    console.log("distArr:",distArr);
+    // console.log("distArr:",distArr);
 
     //4つの中からエリート選択
     const firstChoiceNum = pickOneOfFour(distArr);
     const firstChoice = arr[firstChoiceNum];
 
-    console.log("firstChoiceNum:",firstChoiceNum);
-    console.log("firstChoice:",firstChoice);
+    // console.log("firstChoiceNum:",firstChoiceNum);
+    // console.log("firstChoice:",firstChoice);
 
     //選択された要素を削除
     arr.splice(firstChoiceNum, 1);
